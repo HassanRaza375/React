@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 const person = (props) => {
+  const [color, setColor] = useState({ color1: "yellow" });
+  changeHandler = () => {
+    setColor((prevstate) => {
+      return { ...prevstate, colorBase: "red" };
+    });
+  };
   const { Name, Age } = props.Details;
   return (
     <div>
